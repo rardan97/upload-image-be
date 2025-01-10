@@ -14,7 +14,7 @@ public class UserServiceImpl implements UserService {
     @Autowired
     UserRepository userRepository;
     @Override
-    public List<UserRes> getListAll(UserReq userReq) {
+    public List<UserRes> getListAll() {
         return null;
     }
 

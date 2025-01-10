@@ -9,7 +9,7 @@ import java.util.List;
 @Service
 public interface UserService {
 
-    List<UserRes> getListAll(UserReq userReq);
+    List<UserRes> getListAll();
 
     UserRes getUserById(Long id);
 
