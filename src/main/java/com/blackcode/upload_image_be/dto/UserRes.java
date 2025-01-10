@@ -1,20 +1,15 @@
-package com.blackcode.upload_image_be.model;
+package com.blackcode.upload_image_be.dto;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-@Table(name="User")
-public class User {
+public class UserRes {
     private Long id;
 
     private String name;
@@ -22,5 +17,4 @@ public class User {
     private String email;
 
     private String image;
-
 }

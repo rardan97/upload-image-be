@@ -1,5 +1,6 @@
 package com.blackcode.upload_image_be.controller;
 
+import com.blackcode.upload_image_be.dto.UserRes;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,27 +12,27 @@ import java.util.List;
 public class UserController {
 
     @GetMapping("/getListAll")
-    public ResponseEntity<List<String>> getListAll(){
+    public ResponseEntity<List<UserRes>> getListAll(){
         return null;
     }
 
     @GetMapping("/getValueById/{id}")
-    public ResponseEntity<String> getValueById(){
+    public ResponseEntity<UserRes> getValueById(){
         return null;
     }
 
     @PostMapping("/createUser")
-    public ResponseEntity<String> createUser(){
+    public ResponseEntity<UserRes> createUser(){
        return null;
     }
 
     @PutMapping("/updateUser/{id}")
-    public ResponseEntity<String> updateUser(){
+    public ResponseEntity<UserRes> updateUser(){
         return null;
     }
 
     @DeleteMapping("/deleteUser/{id}")
-    public ResponseEntity<String> deleteUser(){
+    public ResponseEntity<UserRes> deleteUser(){
         return null;
     }
 }
