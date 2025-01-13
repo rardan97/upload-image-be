@@ -25,7 +25,7 @@ public class UserServiceImpl implements UserService {
             userRtnTemp.setId(userTemp.getId());
             userRtnTemp.setName(userTemp.getName());
             userRtnTemp.setImage(userTemp.getImage());
-            userRtnTemp.setEmail(userTemp.getEmail());
+//            userRtnTemp.setEmail(userTemp.getEmail());
             userRtn.add(userRtnTemp);
         }
         return userRtn;
@@ -38,7 +38,7 @@ public class UserServiceImpl implements UserService {
         UserRes userRtn = new UserRes();
         userRtn.setId(userTemp.getId());
         userRtn.setName(userTemp.getName());
-        userRtn.setEmail(userTemp.getEmail());
+//        userRtn.setEmail(userTemp.getEmail());
         userRtn.setImage(userTemp.getImage());
         return userRtn;
     }
@@ -47,13 +47,13 @@ public class UserServiceImpl implements UserService {
     public UserRes createUser(UserReq userReq) {
         User user = new User();
         user.setName(userReq.getName());
-        user.setEmail(userReq.getEmail());
+//        user.setEmail(userReq.getEmail());
         user.setImage(userReq.getImage());
         User userSave = userRepository.save(user);
         UserRes userRet = new UserRes();
         userRet.setId(userSave.getId());
         userRet.setName(userSave.getName());
-        userRet.setEmail(userSave.getEmail());
+//        userRet.setEmail(userSave.getEmail());
         userRet.setImage(userSave.getImage());
         return userRet;
     }
@@ -66,14 +66,14 @@ public class UserServiceImpl implements UserService {
         User userUpdate = new User();
         userUpdate.setId(userTemp.getId());
         userUpdate.setName(userTemp.getName());
-        userUpdate.setEmail(userTemp.getEmail());
+//        userUpdate.setEmail(userTemp.getEmail());
         userUpdate.setImage(userTemp.getImage());
         User userSave = userRepository.save(userUpdate);
 
         UserRes userRtn = new UserRes();
         userRtn.setId(userSave.getId());
         userRtn.setName(userSave.getName());
-        userRtn.setEmail(userSave.getEmail());
+//        userRtn.setEmail(userSave.getEmail());
         userRtn.setImage(userSave.getImage());
 
         return userRtn;

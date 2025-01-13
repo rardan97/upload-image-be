@@ -14,7 +14,7 @@ public class UserRes {
 
     private String name;
 
-    private String email;
-
     private String image;
+
+    private String description;
 }

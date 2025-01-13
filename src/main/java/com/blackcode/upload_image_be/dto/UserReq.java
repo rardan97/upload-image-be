@@ -14,7 +14,7 @@ public class UserReq {
 
     private String name;
 
-    private String email;
-
     private String image;
+
+    private String description;
 }
