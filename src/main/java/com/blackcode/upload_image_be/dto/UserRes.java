@@ -10,11 +10,11 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserRes {
-    private Long id;
+    private Long userId;
 
-    private String name;
+    private String userName;
 
-    private String image;
+    private String userImage;
 
-    private String description;
+    private String userDesc;
 }

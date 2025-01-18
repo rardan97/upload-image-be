@@ -12,17 +12,16 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name="User")
+@Table(name="tb_user")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long userId;
 
-    private String name;
+    private String userName;
 
+    private String userImage;
 
-    private String image;
-
-    private String description;
+    private String userDesc;
 
 }
