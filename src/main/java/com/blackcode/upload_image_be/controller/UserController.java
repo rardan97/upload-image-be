@@ -92,7 +92,6 @@ public class UserController {
         } catch (NoSuchElementException err) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         } catch (Exception e) {
-            e.printStackTrace();
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
@@ -127,18 +126,14 @@ public class UserController {
             UserReq userReq = new UserReq();
             userReq.setUserName(userName);
             userReq.setUserDesc(userDesc);
-            System.out.println("image :"+userImage);
             if (userImage != null && !userImage.isEmpty()) {
                 UserRes dataUser = userService.getUserById(userId);
                 if(dataUser.getUserImage() != null && !dataUser.getUserImage().isEmpty()){
-                    System.out.println("Image Storage not null");
                     String filename = dataUser.getUserImage();
-                    System.out.println("file : "+filename);
                     if(filename.equals(userImage.getOriginalFilename())){
                         System.out.println("image user tidak di ganti");
                     }else{
                         File file = new File(uploadDir + File.separator + filename);
-                        System.out.println("file : "+file);
                         if (file.exists()) {
                             storageService.delete(dataUser.getUserImage());
                         } else {
