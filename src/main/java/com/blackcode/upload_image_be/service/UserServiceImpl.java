@@ -88,9 +88,9 @@ public class UserServiceImpl implements UserService {
         Optional<User> dataUser = userRepository.findById(id);
         if(dataUser.isPresent()){
             userRepository.deleteById(id);
-            return "Success Delete Kategori ID : "+id;
+            return "Success Delete User ID : "+id;
         }else {
-            return "No Found Kategori ID : "+id;
+            return "Not Found User ID : "+id;
         }
     }
 }
