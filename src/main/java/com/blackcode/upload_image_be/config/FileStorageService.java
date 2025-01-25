@@ -23,24 +23,19 @@ public class FileStorageService implements StorageService{
     public String store(MultipartFile file) {
         File dir = new File(uploadDir);
         if (!dir.exists()) {
-            dir.mkdirs(); // Membuat folder jika belum ada
+            dir.mkdirs();
         }
 
-        // Mengambil nama file asli
-//        String originalFilename = StringUtils.cleanPath(file.getOriginalFilename());
-
-        // Menghasilkan nama file baru dengan UUID agar unik
         String filename = UUID.randomUUID().toString();
 
         try {
-            // Menyimpan file ke folder yang telah ditentukan
             Path targetLocation = Paths.get(uploadDir + File.separator + filename);
             Files.copy(file.getInputStream(), targetLocation);
         } catch (IOException ex) {
             throw new RuntimeException("Failed to store file " + filename, ex);
         }
 
-        return filename; // Mengembalikan nama file yang telah disimpan
+        return filename;
 
     }
 
@@ -58,7 +53,7 @@ public class FileStorageService implements StorageService{
     public void delete(String filename) {
         try {
             Path filePath = Paths.get(uploadDir).resolve(filename).normalize();
-            Files.delete(filePath); // Menghapus file dari sistem
+            Files.delete(filePath);
         } catch (IOException ex) {
             throw new RuntimeException("Failed to delete file " + filename, ex);
         }
